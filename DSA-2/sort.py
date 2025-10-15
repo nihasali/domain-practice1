@@ -38,54 +38,82 @@
 # print(arr)
 
 
+# def quicksort(arr):
+#     if len(arr) <= 1:
+#         return arr
+
+#     smallest = []
+#     largest = []
+#     pivot=arr[-1]
+#     for i in range(len(arr)-1):
+#         if pivot >= arr[i]:
+#             smallest.append(arr[i])
+#         if pivot < arr[i]:
+#             largest.append(arr[i])
+    
+#     return quicksort(smallest) + [pivot] + quicksort(largest)
+
+# arr = [30,60,10,20,50,40]
+# print(quicksort(arr))
+
+
+# def merge_sort(arr):
+#     if len(arr) <= 1:
+#         return arr
+    
+#     mid = len(arr)//2
+#     left = merge_sort(arr[:mid])
+#     right = merge_sort(arr[mid:])
+
+#     return merge(left,right)
+
+
+
+# def merge(left,right):
+#     result = []
+#     i=j=0
+
+#     while i<len(left) and j<len(right):
+#         if left[i] <= right[j]:
+#             result.append(left[i])
+#             i += 1
+#         else:
+#             result.append(right[j])
+#             j += 1
+    
+#     result.extend(left[i:])
+#     result.extend(right[j:])
+
+#     return result
+
+# arr = [10,50,20,60,40,30]
+# a = merge_sort(arr)
+# print(a)
+
+
+
+students = [
+    {"id": 1, "name": "Alice", "age": 20, "math": 95},
+    {"id": 2, "name": "Bob", "age": 21, "math": 85},
+    {"id": 3, "name": "Charlie", "age": 19, "math": 88}
+]
+
 def quicksort(arr):
     if len(arr) <= 1:
         return arr
 
     smallest = []
     largest = []
-    pivot=arr[-1]
-    for i in range(len(arr)-1):
-        if pivot >= arr[i]:
+    pivot = arr[-1]  # last element as pivot
+    for i in range(len(arr) - 1):
+        if pivot["age"] >= arr[i]["age"]:
             smallest.append(arr[i])
-        if pivot < arr[i]:
+        else:
             largest.append(arr[i])
     
     return quicksort(smallest) + [pivot] + quicksort(largest)
 
-arr = [30,60,10,20,50,40]
-print(quicksort(arr))
+sorted_students = quicksort(students)
 
-
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    
-    mid = len(arr)//2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-
-    return merge(left,right)
-
-
-
-def merge(left,right):
-    result = []
-    i=j=0
-
-    while i<len(left) and j<len(right):
-        if left[i] <= right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
-    
-    result.extend(left[i:])
-    result.extend(right[j:])
-
-    return result
-
-arr = [10,50,20,60,40,30]
-a = merge_sort(arr)
-print(a)
+for s in sorted_students:
+    print(s)

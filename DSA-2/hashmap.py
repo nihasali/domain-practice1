@@ -16,6 +16,16 @@ class hashtable:
             if i[0] == key:
                 return i[1]
         return "not found"
+
+        
+    def delete(self,key):
+        index = self.hash_function(key)
+        for i,(k,v) in enumerate(self.table[index]):
+            if k == key:
+                self.table[index].pop(i)
+                return True
+
+        return False
     
     def display(self):
         for i,j in enumerate(self.table):

@@ -5,6 +5,16 @@
 # print(list(list2))
 
 
+# def get_numbers():
+#     return [1, 2, 3, 4, 5]
+
+# numbers = get_numbers()
+
+# squares = list(map(lambda x: x ** 2, numbers))
+
+# print(squares)
+
+
 # arr = [1,2,3,4,5,6,2,7,4,1,1]
 # dict1 = {}
 # for i in arr:

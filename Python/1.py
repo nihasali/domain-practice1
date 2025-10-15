@@ -138,3 +138,8 @@
 
 # b = fun("helloh")
 # print(b)
+
+
+# str1 = 'nihedas'
+# func1 = lambda x: x[-1]+x[1:-1]+x[0]
+# print(func1(str1))

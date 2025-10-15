@@ -1,24 +1,24 @@
-# class Car:
-#     price = 1000
+class Car:
+    price = 1000
 
-#     def __init__(self,name):
-#         self.name = name
+    def __init__(self,name):
+        self.name = name
 
-#     def print_l(self):
-#         print('parent class is called')
-#         print(self.name)
-#         print(Car.price)
+    def print_l(self):
+        print('parent class is called')
+        print(self.name)
+        print(Car.price)
 
-# class Vehicle(Car):
-#     def __init__(self,name):
-#         self.name = name
-#         super().__init__(name)
+class Vehicle(Car):
+    def __init__(self,name):
+        self.name = name
+        super().__init__(name)
 
-#     def show_p(self):
-#         self.print_l()
+    def show_p(self):
+        self.print_l()
 
-# obj1 = Vehicle('honda')
-# obj1.show_p()
+obj1 = Vehicle('honda')
+obj1.show_p()
 
 
 
@@ -42,14 +42,14 @@
 
 
 
-# def delete(self,key):
-#     index = self.hash_function(key)
-#     for i,(k,v) in enumerate(self.table[index]):
-#         if k == key:
-#             self.table[index].pop(i)
-#             return True
+def delete(self,key):
+    index = self.hash_function(key)
+    for i,(k,v) in enumerate(self.table[index]):
+        if k == key:
+            self.table[index].pop(i)
+            return True
 
-#     return False
+    return False
 
 
 # def delete(self,value):
@@ -96,4 +96,24 @@
 
 
 
-
+class Vehicle:
+    color = 'orange'
+    def __init__(self, sample):
+        self.sample = sample
+        
+    def display(self):
+        print(Vehicle.color)
+        print(self.sample)
+        
+class Car(Vehicle):
+    def __init__(self, model):
+        self.model = model
+        super().__init__(model)
+        
+    def disp(self):
+        print(Vehicle.color)
+        print(self.sample)
+        
+        
+x = Car('honda')
+x.disp()

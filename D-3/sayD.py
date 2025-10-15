@@ -255,3 +255,27 @@
 # bst.delete(60)
 # print('hai')
 # bst.inorder()
+
+
+
+class Vehicle:
+    color = 'orange'
+    def __init__(self, sample):
+        self.sample = sample
+        
+    def display(self):
+        print(Vehicle.color)
+        print(self.sample)
+        
+class Car(Vehicle):
+    def __init__(self, model):
+        self.model = model
+        super().__init__(model)
+        
+    def disp(self):
+        print(Vehicle.color)
+        print(self.sample)
+        
+        
+x = Car('honda')
+x.disp()

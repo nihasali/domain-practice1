@@ -46,10 +46,10 @@ class BST:
             return None
         
         if value < node.value:
-            node.left = delete_rec(node.left,value)
+            node.left = self.delete_rec(node.left,value)
         
         elif value > node.value:
-            node.right = delete_rec(node.right,value)
+            node.right = self.delete_rec(node.right,value)
         
         else:
             if node.left is None:
@@ -77,7 +77,39 @@ class BST:
             self.inorder_rec(node.left)
             print(node.value,end=' ')
             self.inorder_rec(node.right)
+    
+    def find_largest(self):
+        if self.root is None:
+            return None
+        current = self.root
+        while current.right:
+            current = current.right
+        
+        return current.value
 
+    def second_largest(self):
+        if self.root or (self.root.left is None or self.root.right is None):
+            return None
+
+        current = self.root
+        parent = None
+
+        while current.right:
+            parent = current
+            current = current.right
+
+        if current.left:
+            return self.find_max(current.left).value
+
+        return parent.value
+
+
+    def find_max(self,node):
+        current = node
+        while current.right:
+            current = current.right
+
+        return current
 
 a=BST()
 a.insert(10)
@@ -87,6 +119,8 @@ a.insert(40)
 a.insert(5)
 print("Before deletion:")
 a.inorder()
-print("\nAfter deleting 10:")
+print("\nAfter deleting 30:")
 a.delete(30)
 a.inorder()
+print('\nlargest is: ')
+print(a.find_largest())
